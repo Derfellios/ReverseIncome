@@ -1,0 +1,1 @@
+This mod adds one new rule: If you are in a team with two active players, their incomes are swapped!
