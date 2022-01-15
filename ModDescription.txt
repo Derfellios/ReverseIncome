@@ -1,1 +1,7 @@
 This mod adds one new rule: If you are in a team with two active players, their incomes are swapped!
+
+Due to technical difficulties, this change does not apply to turn 1. 
+
+The mod is compatible with Sanction Cards. Play the card on the player holding the income to reduce that income. 
+
+For obvious reasons, the mod does not support local deployments. If you enable it, the mod will be ignored.
