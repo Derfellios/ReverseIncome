@@ -5,12 +5,20 @@ function Server_AdvanceTurn_End(game, addNewOrder)
 	Teams  = {}
 	TeamPlayers = {}
 	for ID, Player in pairs(game.Game.PlayingPlayers) do
-		if not IsInList(Teams, Player.Team) then
-			Teams[#Teams + 1] = Player.Team;
-			TeamPlayers[Player.Team] = {ID}
+		if Player.Team ~= nil then
+			if not IsInList(Teams, Player.Team) then
+				Teams[#Teams + 1] = Player.Team;
+				TeamPlayers[Player.Team] = {ID}
+			else
+				TeamPlayers[Player.Team][#TeamPlayers[Player.Team] + 1] = ID
+			end
 		else
-			TeamPlayers[Player.Team][#TeamPlayers[Player.Team] + 1] = ID
-		end
+			if not IsInList(Teams, 0) then
+				TeamPlayers[0] = {ID}
+			else
+				TeamPlayers[0][#TeamPlayers[Player.Team] + 1] = ID
+			end
+		end;
 	end;
 	
 	for _, Team in pairs(TeamPlayers) do
